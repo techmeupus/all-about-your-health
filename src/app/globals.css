@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Design tokens — see STYLE_GUIDE.md */
+@theme {
+  --color-navy: #0b3b70;
+  --color-navy-deep: #062c52;
+  --color-teal: #009c9a;
+  --color-teal-bright: #08b5b0;
+  --color-blue-light: #eaf5fa;
+  --color-cyan-pale: #f3fafc;
+  --color-line: #d6e9f2;
+  --color-body: #334b63;
+  --color-muted: #64788b;
+
+  --font-heading: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --container-site: 1280px;
+
+  --radius-card: 12px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-white font-sans text-base leading-relaxed text-body md:text-[17px];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-navy;
+  }
+}
+
+@layer components {
+  /* Content width + responsive side padding (mobile 20 / tablet 32 / desktop 48) */
+  .container-site {
+    @apply mx-auto w-full max-w-site px-5 md:px-8 lg:px-12;
+  }
+
+  /* Small uppercase section label */
+  .eyebrow {
+    @apply font-sans text-xs font-medium tracking-[0.2em] uppercase md:text-[13px];
+  }
+}
