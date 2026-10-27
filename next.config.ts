@@ -1,11 +1,15 @@
 import type { NextConfig } from "next";
 
-// Static export: `npm run build` writes a plain HTML site to /out,
-// which any Hostinger plan (including shared hosting) can serve.
+// STATIC_EXPORT=1 npm run build -> plain HTML site in /out (shared hosting, see deploy.yml).
+// Plain `npm run build` -> normal Next.js server build for `npm start` (Hostinger Node.js hosting).
+const staticExport = process.env.STATIC_EXPORT === "1";
+
 const nextConfig: NextConfig = {
-  output: "export",
-  trailingSlash: true, // /services/plantar-fasciitis/ -> .../index.html (works on Apache)
-  images: { unoptimized: true }, // the image optimizer needs a Node server
+  trailingSlash: true,
+  ...(staticExport && {
+    output: "export",
+    images: { unoptimized: true }, // the image optimizer needs a Node server
+  }),
 };
 
 export default nextConfig;

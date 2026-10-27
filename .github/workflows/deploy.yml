@@ -23,6 +23,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          STATIC_EXPORT: "1"
 
       - name: Publish /out to the deploy branch
         uses: peaceiris/actions-gh-pages@v4
