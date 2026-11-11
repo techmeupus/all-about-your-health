@@ -16,6 +16,7 @@ export type Provider = {
   education?: { heading: string; items: string[] }[];
   offices?: string[];
   facts?: string[]; // short highlights shown in the profile header
+  insuranceLogos?: { src: string; alt: string; width: number; height: number }[]; // bottom of profile content
 };
 
 export const providers: Provider[] = [
@@ -62,11 +63,28 @@ export const providers: Provider[] = [
     name: "Duc Nguyen",
     suffix: "DPM",
     specialties: ["Podiatry"],
+    role: "Board Certified Podiatrist",
     photo: { src: "/Doctors/duc-nguyen.jpg", objectPosition: "0% 30%" },
     credentials: ["Doctor of Podiatric Medicine"],
     affiliations: [
       "American Podiatric Medical Association",
       "Florida Podiatric Medical Association",
+    ],
+    bio: [
+      "Dr. Duc Nguyen is a board certified podiatrist who started his practice, Duc Nguyen Podiatry, to bring forth his practice philosophy of providing exceptional, compassionate, and innovative care while treating patients like family. From his early childhood, Dr. Nguyen knew his life's work would be in medicine and promised his Uncle that he would use his talents to improve the lives of others.",
+      "Before relocating to the Sunshine state, Dr. Nguyen completed his podiatric residency at Wyckoff Height Medical Center in Brooklyn, New York. His residency combined state-of-the-art podiatric medical training with advanced preparation in reconstructive rearfoot and ankle surgery. It was here at Wyckoff Heights where Dr. Nguyen achieved the status of Chief Resident of Podiatry and completed his board certification.",
+      "Dr. Nguyen specializes in elective, reconstructive, and traumatic foot and ankle surgery, sports medicine (with a focus on sports injuries of the foot and ankle), pediatric podiatry, geriatric podiatry, and diabetic limb salvage and wound care. He is proud to provide foot care for patients of all ages from pediatric to geriatric.",
+      "When not providing care for his patients, Dr. Nguyen can be found exploring Florida. His interests include fitness training and martial arts, as well as a deep love of fishing and golf. Dr. Nguyen is welcoming new patients at his St. Augustine office.",
+    ],
+    education: [
+      { heading: "Medical Education", items: ["Kent State University College of Podiatric Medicine, OH"] },
+      { heading: "Residency Training", items: ["Wyckoff Height Medical Center, Brooklyn, New York"] },
+    ],
+    offices: ["St. Augustine"],
+    facts: ["Chief Resident of Podiatry", "Accepting new patients"],
+    insuranceLogos: [
+      { src: "/logo/BCBS-logo-.png", alt: "Blue Cross Blue Shield", width: 400, height: 200 },
+      { src: "/logo/Medicare-logo-1536x436.png", alt: "Medicare", width: 1536, height: 436 },
     ],
   },
   {

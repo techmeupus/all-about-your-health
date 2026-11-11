@@ -4,6 +4,7 @@ import CtaBanner from "@/components/sections/home/CtaBanner";
 import ServiceArticle from "@/components/sections/service/ServiceArticle";
 import ServiceFaqs from "@/components/sections/service/ServiceFaqs";
 import ServiceHero from "@/components/sections/service/ServiceHero";
+import ServiceOffices from "@/components/sections/service/ServiceOffices";
 import ServiceRelated from "@/components/sections/service/ServiceRelated";
 import ServiceSidebar from "@/components/sections/service/ServiceSidebar";
 import ServiceTreatments from "@/components/sections/service/ServiceTreatments";
@@ -58,6 +59,7 @@ export default async function ServicePage({ params }: Props) {
       </div>
 
       <ServiceRelated service={service} />
+      <ServiceOffices />
       <div className="bg-blue-light pt-20 lg:pt-28">
         <CtaBanner />
       </div>

@@ -1,4 +1,4 @@
-import { BookOpen } from "lucide-react";
+import { BookOpen, CircleCheck } from "lucide-react";
 import type { Service } from "@/content/services";
 import ServiceCallout from "./ServiceCallout";
 import ServiceRiskFactors from "./ServiceRiskFactors";
@@ -27,6 +27,16 @@ export default function ServiceArticle({ service: s }: { service: Service }) {
 
           {sec.intro && (
             <p className="mt-5 text-base leading-[1.8] text-body md:text-[17px]">{sec.intro}</p>
+          )}
+          {sec.bullets && (
+            <ul className="mt-5 space-y-3">
+              {sec.bullets.map((b) => (
+                <li key={b} className="flex gap-3 text-base leading-[1.7] text-body md:text-[17px]">
+                  <CircleCheck aria-hidden className="mt-1 size-5 shrink-0 text-teal" />
+                  {b}
+                </li>
+              ))}
+            </ul>
           )}
           {sec.factors && <ServiceRiskFactors factors={sec.factors} />}
 

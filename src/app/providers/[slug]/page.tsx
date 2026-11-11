@@ -4,6 +4,7 @@ import ProfileAbout from "@/components/sections/provider/ProfileAbout";
 import ProfileCredentials from "@/components/sections/provider/ProfileCredentials";
 import ProfileCta from "@/components/sections/provider/ProfileCta";
 import ProfileEducation from "@/components/sections/provider/ProfileEducation";
+import ProfileInsurance from "@/components/sections/provider/ProfileInsurance";
 import ProfileHeader from "@/components/sections/provider/ProfileHeader";
 import ProfileSidebar from "@/components/sections/provider/ProfileSidebar";
 import StickyTabs from "@/components/ui/StickyTabs";
@@ -55,6 +56,7 @@ export default async function ProviderPage({ params }: Props) {
           <ProfileTreatments provider={provider} />
           <ProfileCredentials provider={provider} />
           <ProfileEducation provider={provider} />
+          <ProfileInsurance provider={provider} />
         </div>
         <ProfileSidebar provider={provider} />
       </div>

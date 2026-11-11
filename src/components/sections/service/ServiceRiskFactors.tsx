@@ -1,7 +1,23 @@
-import { Activity, Briefcase, CalendarClock, Footprints, Scale } from "lucide-react";
+import {
+  Activity,
+  Briefcase,
+  CalendarClock,
+  Dumbbell,
+  Footprints,
+  HeartPulse,
+  Hourglass,
+  Pill,
+  Scale,
+  Users,
+} from "lucide-react";
 import type { ServiceSection } from "@/content/services";
 
 const Icons = {
+  sex: Users,
+  medical: HeartPulse,
+  meds: Pill,
+  rest: Hourglass,
+  strength: Dumbbell,
   age: CalendarClock,
   exercise: Activity,
   foot: Footprints,
