@@ -20,6 +20,9 @@ export const site = {
     mapUrl: "https://www.google.com/maps/search/?api=1&query=2005+Highway+US+1",
     phone: "904-823-3301",
     phoneHref: "tel:+19048233301",
+    fax: "(904) 823-3328",
+    email: "aboutfeetstaff@gmail.com",
+    fullAddress: "2005 Highway US 1, St. Augustine, FL 32086",
   },
   cta: { label: "Request an Appointment", href: "/contact" },
   footer: {

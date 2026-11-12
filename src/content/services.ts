@@ -9,6 +9,8 @@ export type ServiceSection = {
   bullets?: string[]; // simple bulleted list shown after `intro`
   factors?: { icon: string; term: string; text: string }[]; // icons: see Icons map in ServiceRiskFactors.tsx
   callout?: string; // call-to-action box at the end of the section
+  // Photo tiles shown after `intro`. `image` is optional (gradient tile when missing), e.g. "/servicesimg/sports/golf.jpg"
+  tiles?: { name: string; image?: string }[];
 };
 
 export type Service = {
@@ -26,6 +28,8 @@ export type Service = {
   faqs?: { question: string; answer: string }[];
   citation?: string;
   providerSlug: string; // listed first under "Find a Doctor"
+  showOffices?: boolean; // "Choose an office near you" block; off by default, set true per service as confirmed
+  comingSoon?: boolean; // shows a "Coming soon" body instead of the article; remove once content is added
 };
 
 export const services: Service[] = [
@@ -383,6 +387,202 @@ export const services: Service[] = [
       ],
     },
     citation: "American College of Foot & Ankle Physicians",
+    providerSlug: "rosana-rodriguez",
+  },
+  {
+    slug: "wound-care",
+    name: "Wound Care",
+    specialty: "Wound Care",
+    tagline: "Wound care in St. Augustine",
+    summary:
+      "Diabetic foot ulcers and venous leg ulcers are common and potentially serious. Early, expert wound care prevents infection and helps you heal.",
+    seo: {
+      title: "Wound Care in St. Augustine",
+      description:
+        "Looking for wound care in St. Augustine? Call our office to schedule an evaluation of your diabetic foot ulcer or venous leg ulcer with a certified wound specialist.",
+    },
+    heroImage: "/servicesimg/woundcare-stock.jpeg",
+    facts: [
+      { label: "Conditions treated", value: "Diabetic foot ulcers & venous leg ulcers" },
+      { label: "Diabetic patients affected", value: "Around 15% develop a foot ulcer" },
+      { label: "Key to healing", value: "Early detection and intervention" },
+    ],
+    sidebar: {
+      title: "Have an acute wound or ulcer?",
+      text: "Consult a certified wound specialist. Call our office to schedule an evaluation.",
+    },
+    sections: [
+      {
+        id: "about-condition",
+        title: "Introduction",
+        paragraphs: [
+          "Diabetic foot ulcers and venous leg ulcers are common and potentially serious complications. Understanding proper wound care is crucial to prevent severe complications effectively. For wound care in St. Augustine, always consult a certified wound specialist should you have an acute wound or ulcer.",
+        ],
+      },
+      {
+        id: "diabetic-foot-ulcers",
+        title: "Understanding Diabetic Foot Ulcers",
+        paragraphs: [
+          "Diabetic foot ulcers are open sores that occur in individuals with diabetes. They primarily develop due to nerve damage and poor circulation. Statistics reveal that around 15% of diabetic patients will develop foot ulcers at some point. Early detection and intervention are crucial to prevent severe complications such as infections and amputations.",
+        ],
+      },
+      {
+        id: "venous-leg-ulcers",
+        title: "Venous Leg Ulcers: Causes and Characteristics",
+        paragraphs: [
+          "Venous leg ulcers are open sores that occur due to poor blood circulation in the legs. They affect a significant portion of individuals, especially those with a history of venous insufficiency or deep vein thrombosis. Recognizing symptoms and understanding the underlying causes are essential for proper treatment and prevention of recurrence.",
+        ],
+      },
+      {
+        id: "prevention",
+        title: "Prevention and Long-Term Management",
+        paragraphs: [
+          "Preventing recurrence and complications involves lifestyle changes, regular wound monitoring, and adherence to proper foot care. Long-term management aims to minimize the risk of ulcer development and maintain overall foot health.",
+        ],
+      },
+      {
+        id: "conclusion",
+        title: "Conclusion",
+        paragraphs: [
+          "Comprehensive wound care is indispensable for managing diabetic foot ulcers and venous leg ulcers. Early intervention, appropriate treatment strategies, and ongoing management are vital to prevent complications and ensure better outcomes for individuals with these conditions.",
+        ],
+        callout:
+          "Looking for wound care in St. Augustine? Call our office today to schedule an evaluation of your diabetic foot ulcer or venous leg ulcer.",
+      },
+    ],
+    treatmentOptions: {
+      intro:
+        "Effective wound care strategies are essential for managing both diabetic foot ulcers and venous leg ulcers. These strategies include:",
+      items: [
+        "Regular wound cleaning.",
+        "Appropriate dressings.",
+        "Debridement of dead tissue.",
+        "Offloading devices.",
+        "Patient education. Learning self-care practices plays a pivotal role in the healing process.",
+      ],
+    },
+    faqs: [
+      {
+        question: "What are diabetic foot ulcers?",
+        answer:
+          "Diabetic foot ulcers are open sores that occur in individuals with diabetes. They primarily develop due to nerve damage and poor circulation. Around 15% of diabetic patients will develop a foot ulcer at some point.",
+      },
+      {
+        question: "What causes venous leg ulcers?",
+        answer:
+          "Venous leg ulcers are open sores that occur due to poor blood circulation in the legs. They are especially common in people with a history of venous insufficiency or deep vein thrombosis.",
+      },
+      {
+        question: "Why is early treatment important?",
+        answer:
+          "Early detection and intervention help prevent severe complications such as infections and amputations.",
+      },
+      {
+        question: "How can I prevent ulcers from coming back?",
+        answer:
+          "Prevention involves lifestyle changes, regular wound monitoring, and adherence to proper foot care.",
+      },
+    ],
+    citation:
+      "American Diabetes Association, National Institute of Diabetes and Digestive and Kidney Diseases, National Institute for Health and Care Excellence, Journal of Vascular Surgery, Wound Repair and Regeneration Journal, Cochrane Database of Systematic Reviews, Journal of Wound Care, International Wound Journal",
+    providerSlug: "rosana-rodriguez",
+  },
+  {
+    slug: "vein-vascular-care",
+    name: "Vein & Vascular Care",
+    specialty: "Podiatry",
+    tagline: "Vein and vascular care in St. Augustine",
+    summary: "Detailed information about our vein and vascular care is coming soon.",
+    seo: {
+      title: "Vein & Vascular Care in St. Augustine",
+      description:
+        "Vein and vascular care in St. Augustine. This page is coming soon. Call our office to schedule an evaluation.",
+    },
+    heroImage: "/servicesimg/Clinical IV Catheter Insertion.webp",
+    facts: [],
+    sidebar: {
+      title: "Questions about vein health?",
+      text: "Our team can evaluate your symptoms and build a treatment plan around you.",
+    },
+    sections: [],
+    comingSoon: true,
+    providerSlug: "rosana-rodriguez",
+  },
+  {
+    slug: "neuropathy",
+    name: "Neuropathy",
+    specialty: "Podiatry",
+    tagline: "Neuropathy care in St. Augustine",
+    summary: "Detailed information about our neuropathy care is coming soon.",
+    seo: {
+      title: "Neuropathy Treatment in St. Augustine",
+      description:
+        "Neuropathy care in St. Augustine. This page is coming soon. Call our office to schedule an evaluation.",
+    },
+    heroImage: "/servicesimg/Neuropathy.jpg",
+    facts: [],
+    sidebar: {
+      title: "Numbness or tingling in your feet?",
+      text: "Our team can evaluate your symptoms and build a treatment plan around you.",
+    },
+    sections: [],
+    comingSoon: true,
+    providerSlug: "rosana-rodriguez",
+  },
+  {
+    slug: "sports-injuries",
+    name: "Sports Injuries",
+    specialty: "Podiatry",
+    tagline: "Sports injury care for the foot and ankle in St. Augustine",
+    summary:
+      "From sprains and strains to fractures and tendon ruptures, our podiatrists diagnose and treat sports injuries of the foot and ankle.",
+    seo: {
+      title: "Sports Injuries in St. Augustine",
+      description:
+        "Ankle sprains, muscle strains, turf toe, fractures and more. Our board certified podiatrists in St. Augustine diagnose, treat and help prevent sports injuries of the foot and ankle.",
+    },
+    heroImage: "/sports/sports.webp",
+    facts: [
+      { label: "Common injuries", value: "Sprains, strains, turf toe & fractures" },
+      { label: "Caused by", value: "Abrupt trauma or repetitive overuse" },
+      { label: "Key to recovery", value: "Early diagnosis and clinical evaluation" },
+    ],
+    sidebar: {
+      title: "Hurt playing sports?",
+      text: "Our board certified podiatry team can diagnose your injury and build a treatment plan around you.",
+    },
+    sections: [
+      {
+        id: "about-condition",
+        title: "Sports Injuries",
+        paragraphs: [
+          "Sports injuries are unfortunately a common occurrence within the foot and ankle. Frequently, injuries such as ankle sprains, muscle strains/tears, turf toe, fractures and dislocations are seen by podiatrists. As a podiatrist, we are uniquely equipped in the diagnoses, and treatment of sports injuries in the foot and ankle.",
+          "We have seen sports injuries as mild as a swollen joint or sore heel, to things as extreme as dislocated ankle joints, fractures, and tendon ruptures requiring surgical intervention. Most sports injuries are caused by abrupt and immediate trauma, or repetitive abuse the a specific area over time. This is then realized in the form of pain or stiffness in said area, and it is very important to seek care for these ailments at either time of recognition or at the time of the immediate and abrupt trauma.",
+        ],
+      },
+      {
+        id: "prone-sports",
+        title: "Sports That Are Prone to Injury",
+        intro:
+          "Different sports such as soccer and track put added stress on the legs and feet and can lead to painful drawn-out injuries. Others are:",
+        // Photos live in /public/sports
+        tiles: [
+          { name: "Tennis", image: "/sports/tennis1.webp" },
+          { name: "Pickle Ball", image: "/sports/Pickle Ball.jpg" },
+          { name: "Basketball", image: "/sports/Airborne Basketball Duel Under Arena Lights.webp" },
+          { name: "Golf", image: "/sports/golf.webp" },
+        ],
+      },
+      {
+        id: "early-care",
+        title: "Why Early Care Matters",
+        paragraphs: [
+          "Sports injuries can begin as a mild nuisance which over time if left untreated can compound and become much worse. Early diagnosis and clinical evaluation is a must for many of these injuries in order to avoid further injury, and or longstanding chronic changes.",
+        ],
+        callout:
+          "Seek the care of a board certified podiatrist for evaluation, treatment, and prevention of your sports injuries.",
+      },
+    ],
     providerSlug: "rosana-rodriguez",
   },
 ];

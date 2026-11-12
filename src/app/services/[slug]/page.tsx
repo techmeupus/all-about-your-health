@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CtaBanner from "@/components/sections/home/CtaBanner";
 import ServiceArticle from "@/components/sections/service/ServiceArticle";
+import ServiceComingSoon from "@/components/sections/service/ServiceComingSoon";
 import ServiceFaqs from "@/components/sections/service/ServiceFaqs";
 import ServiceHero from "@/components/sections/service/ServiceHero";
 import ServiceOffices from "@/components/sections/service/ServiceOffices";
@@ -36,6 +37,20 @@ export default async function ServicePage({ params }: Props) {
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
+  if (service.comingSoon) {
+    return (
+      <main>
+        <ServiceHero service={service} />
+        <ServiceComingSoon service={service} />
+        <ServiceRelated service={service} />
+        {service.showOffices && <ServiceOffices />}
+        <div className="bg-blue-light pt-20 lg:pt-28">
+          <CtaBanner />
+        </div>
+      </main>
+    );
+  }
+
   const hasDoctors = providers.some((p) => p.specialties.includes(service.specialty));
   const tabs = [
     { id: "overview", label: "Overview" },
@@ -59,7 +74,7 @@ export default async function ServicePage({ params }: Props) {
       </div>
 
       <ServiceRelated service={service} />
-      <ServiceOffices />
+      {service.showOffices && <ServiceOffices />}
       <div className="bg-blue-light pt-20 lg:pt-28">
         <CtaBanner />
       </div>

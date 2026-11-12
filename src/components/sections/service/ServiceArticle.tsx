@@ -2,6 +2,7 @@ import { BookOpen, CircleCheck } from "lucide-react";
 import type { Service } from "@/content/services";
 import ServiceCallout from "./ServiceCallout";
 import ServiceRiskFactors from "./ServiceRiskFactors";
+import ServiceTiles from "./ServiceTiles";
 
 // "Overview" tab: all article sections
 export default function ServiceArticle({ service: s }: { service: Service }) {
@@ -38,6 +39,7 @@ export default function ServiceArticle({ service: s }: { service: Service }) {
               ))}
             </ul>
           )}
+          {sec.tiles && <ServiceTiles tiles={sec.tiles} />}
           {sec.factors && <ServiceRiskFactors factors={sec.factors} />}
 
           {sec.callout && <ServiceCallout text={sec.callout} />}

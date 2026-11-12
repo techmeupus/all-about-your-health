@@ -30,7 +30,11 @@ const list = [
   { name: "Orthotics", file: "Orthotics.jpg" },
   { name: "Diabetic Foot Care", file: "Diabetic-Foot-Care.jpg" },
   { name: "Hammertoe", file: "Hammer-Toe.jpg" },
-].map((s) => ({ name: s.name, image: encodeURI(`/servicesimg/${s.file}`) }));
+  { name: "Sports Injuries", file: "/sports/sports.webp" }, // a leading "/" means a full path
+].map((s) => ({
+  name: s.name,
+  image: encodeURI(s.file.startsWith("/") ? s.file : `/servicesimg/${s.file}`),
+}));
 
 export default function ServicesPage() {
   return (
@@ -64,13 +68,20 @@ export default function ServicesPage() {
               const href = serviceHref(s.name);
               const card = (
                 <>
-                  <Image
-                    src={s.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 380px, (min-width: 640px) 45vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
-                  />
+                  {s.image ? (
+                    <Image
+                      src={s.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 380px, (min-width: 640px) 45vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 bg-[radial-gradient(120%_120%_at_85%_0%,#0e5a8a_0%,var(--color-navy)_55%,var(--color-navy-deep)_100%)]"
+                    />
+                  )}
                   <span
                     aria-hidden
                     className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/35 to-navy/10 transition-colors duration-300 group-hover:from-navy/90"

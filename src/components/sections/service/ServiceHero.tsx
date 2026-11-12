@@ -28,7 +28,7 @@ export default function ServiceHero({ service: s }: { service: Service }) {
         </>
       )}
 
-      <div className="container-site py-12 lg:py-16">
+      <div className="container-site flex min-h-[420px] flex-col justify-center py-16 sm:min-h-[460px] lg:min-h-[540px] lg:py-24">
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-white/60">
             <li>
